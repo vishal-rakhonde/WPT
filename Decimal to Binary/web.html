@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number conversion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Decimal to Binary</h1>
+        <label for="decimalInput"><b>Enter decimal number :</b></label>
+        <input type="number" id="decimalInput" min="0" step="1">
+        <button onclick="convertInBinary()">Convert</button>
+        <div id="result-container">
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        function convertInBinary(){
+            const inputNo = document.getElementById('decimalInput').value;
+            if(!Number.isInteger(+inputNo) || +inputNo < 0){
+                alert('Enter valid number');
+                return;
+            }
+            const binaryNo = (+inputNo).toString(2);
+            document.getElementById('result').textContent = `Binary : ${binaryNo}`;
+        }
+    </script>
+</body>
+</html>
